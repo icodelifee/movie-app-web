@@ -22,6 +22,7 @@ class PopularList extends HookWidget {
     return popular.when(
       data: (data) => GridView.builder(
           padding: EdgeInsets.all(1.5.h),
+          physics: NeverScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: _getGridCount(),
             crossAxisSpacing: _crossAxisSpacing,
