@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:moviewebsite/data/models/movie.dart';
+import 'package:moviewebsite/ui/detailspage/detailspage.dart';
 import 'package:moviewebsite/ui/homepage/homepage_viewmodel.dart';
 import 'package:moviewebsite/ui/widgets/center_circular_progress.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -29,11 +30,14 @@ class TrendingCarousel extends HookWidget {
           items: data.results!.map((movie) {
             return Builder(
               builder: (BuildContext context) {
-                return Container(
-                  width: Get.size.width,
-                  margin: EdgeInsets.symmetric(horizontal: 5.0),
-                  decoration: buildBgImage(movie),
-                  child: buildTitle(movie),
+                return InkWell(
+                  onTap: () => Get.to(DetailsPage(movie: movie)),
+                  child: Container(
+                    width: Get.size.width,
+                    margin: EdgeInsets.symmetric(horizontal: 5.0),
+                    decoration: buildBgImage(movie),
+                    child: buildTitle(movie),
+                  ),
                 );
               },
             );
