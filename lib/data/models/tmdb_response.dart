@@ -1,7 +1,7 @@
 import 'package:moviewebsite/data/models/movie.dart';
 
-class Trending {
-  Trending({
+class TMDBResponse {
+  TMDBResponse({
     this.page,
     this.results,
     this.totalPages,
@@ -13,7 +13,7 @@ class Trending {
   int? totalPages;
   int? totalResults;
 
-  factory Trending.fromJson(Map<String, dynamic> json) => Trending(
+  factory TMDBResponse.fromJson(Map<String, dynamic> json) => TMDBResponse(
         page: json['page'],
         results:
             List<Movie>.from(json['results'].map((x) => Movie.fromJson(x))),
