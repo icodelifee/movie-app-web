@@ -5,6 +5,10 @@ class App extends StatelessWidget {
   // root widget of the app
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp();
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      defaultTransition: Transition.cupertino,
+      home: Container(),
+    );
   }
 }
