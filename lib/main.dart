@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:global_configuration/global_configuration.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:moviewebsite/app.dart';
-import 'package:moviewebsite/config/example.config.dart';
+import 'package:moviewebsite/config/config.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
