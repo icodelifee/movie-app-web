@@ -33,22 +33,28 @@ class PopularList extends HookWidget {
           itemBuilder: (BuildContext context, int index) {
             final movie = data.results![index];
             return ImageHover(
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  image: DecorationImage(
-                    image: ExtendedNetworkImageProvider(
-                      movie.posterPath!,
-                      cache: true,
+              child: Hero(
+                tag: movie.id!,
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    image: DecorationImage(
+                      image: ExtendedNetworkImageProvider(
+                        movie.posterPath!,
+                        cache: true,
+                      ),
+                      fit: BoxFit.cover,
                     ),
-                    fit: BoxFit.cover,
                   ),
-                ),
-                height: 200,
-                child: InkWell(
-                  onTap: () => Get.to(
-                    DetailsPage(
-                      movie: movie,
+                  height: 200,
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      onTap: () => Get.to(
+                        DetailsPage(
+                          movie: movie,
+                        ),
+                      ),
                     ),
                   ),
                 ),
