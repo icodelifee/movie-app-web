@@ -6,8 +6,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:moviewebsite/data/models/movie.dart';
+import 'package:moviewebsite/data/providers/trending_provider.dart';
 import 'package:moviewebsite/ui/detailspage/detailspage.dart';
-import 'package:moviewebsite/ui/homepage/homepage_viewmodel.dart';
 import 'package:moviewebsite/ui/widgets/center_circular_progress.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 

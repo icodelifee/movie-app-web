@@ -7,9 +7,3 @@ final trendingProvider = FutureProvider(
         GlobalConfiguration().getValue('apiKey'),
       ),
 );
-
-final popularProvider = FutureProvider(
-  (ref) => ref.read(apiRepositoryProvider).getPopular(
-        GlobalConfiguration().getValue('apiKey'),
-      ),
-);
