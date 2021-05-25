@@ -13,9 +13,10 @@ class App extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         defaultTransition: Transition.cupertino,
         theme: ThemeData(
+          cardColor: Color(0xFF151F2E),
           brightness: Brightness.dark,
           scaffoldBackgroundColor: Color(0xFF020916),
-          textTheme: GoogleFonts.interTextTheme(),
+          textTheme: GoogleFonts.montserratTextTheme(),
           appBarTheme: AppBarTheme(
             backgroundColor: Color(0xFF182131),
           ),
