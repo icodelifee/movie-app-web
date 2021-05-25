@@ -24,22 +24,23 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  dio: ^4.0.0
   flutter_hooks: ^0.17.0
   gap: ^2.0.0
   get: ^4.1.4
+  global_configuration: ^2.0.0-nullsafety.1
   google_fonts: ^2.1.0
   hooks_riverpod: ^0.14.0+4
   logger: ^1.0.0
   responsive_sizer: ^2.0.1
   retrofit: ^2.0.0
-  global_configuration: ^2.0.0-nullsafety.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner: any
   pedantic: ^1.11.0
   retrofit_generator: any
-  build_runner: any
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
