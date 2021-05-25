@@ -24,11 +24,7 @@ class ImageHover extends HookWidget {
         offset: translate,
         child: Transform.scale(
           scale: scale.value,
-          child: Material(
-            color: Colors.transparent,
-            elevation: elevation.value,
-            child: child,
-          ),
+          child: child,
         ),
       ),
     );
