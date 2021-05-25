@@ -1,3 +1,5 @@
+import 'package:moviewebsite/constants.dart';
+
 class Movie {
   Movie({
     this.posterPath,
@@ -34,14 +36,15 @@ class Movie {
   String? mediaType;
 
   factory Movie.fromJson(Map<String, dynamic> json) => Movie(
-        posterPath: json['poster_path'],
+        posterPath: "${Constants.imageUrl}${json['poster_path']}",
         id: json['id'],
         overview: json['overview'],
         voteAverage: json['vote_average'].toDouble(),
         voteCount: json['vote_count'],
-        releaseDate: DateTime.parse(json['release_date']),
+        releaseDate:
+            DateTime.parse(json['release_date'] ?? json['first_air_date']),
         adult: json['adult'],
-        backdropPath: json['backdrop_path'],
+        backdropPath: "${Constants.imageUrl}${json['backdrop_path']}",
         video: json['video'],
         genreIds: List<int>.from(json['genre_ids'].map((x) => x)),
         title: json['title'],
