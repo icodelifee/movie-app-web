@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:moviewebsite/constants.dart';
+import 'package:moviewebsite/data/models/genre.dart';
 import 'package:moviewebsite/data/models/tmdb_response.dart';
 import 'package:retrofit/http.dart';
 
@@ -15,4 +16,7 @@ abstract class APIRepository {
 
   @GET('movie/popular')
   Future<TMDBResponse> getPopular(@Query('api_key') String apiKey);
+  
+  @GET('genre/movie/list')
+  Future<GenreResponse> getGenres(@Query('api_key') String apiKey);
 }
