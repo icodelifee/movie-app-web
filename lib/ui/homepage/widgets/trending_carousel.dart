@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:get/get.dart';
+import 'package:get/get.dart' as getx;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:moviewebsite/data/models/movie.dart';
@@ -31,9 +31,9 @@ class TrendingCarousel extends HookWidget {
             return Builder(
               builder: (BuildContext context) {
                 return InkWell(
-                  onTap: () => Get.to(DetailsPage(movie: movie)),
+                  onTap: () => getx.Get.to(DetailsPage(movie: movie)),
                   child: Container(
-                    width: Get.size.width,
+                    width: getx.Get.size.width,
                     margin: EdgeInsets.symmetric(horizontal: 5.0),
                     decoration: buildBgImage(movie),
                     child: buildTitle(movie),
@@ -51,11 +51,13 @@ class TrendingCarousel extends HookWidget {
 
   BoxDecoration buildBgImage(Movie movie) {
     return BoxDecoration(
-      color: Get.theme.cardColor,
+      color: getx.Get.theme.cardColor,
       borderRadius: BorderRadius.circular(10),
       image: DecorationImage(
         fit: BoxFit.fitWidth,
-        alignment: Alignment.topCenter,
+        alignment: Device.screenType != ScreenType.mobile
+            ? Alignment.topCenter
+            : Alignment.center,
         image: ExtendedNetworkImageProvider(
           !movie.backdropPath!.contains('null')
               ? movie.backdropPath!
